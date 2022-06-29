@@ -9,6 +9,7 @@ namespace assignment_3
         public abstract double Area();
         public abstract double perimetr();
     }
+
     class circle : shape
     {
         static readonly double pi = 3.14;
@@ -24,14 +25,31 @@ namespace assignment_3
            return 2*pi*r;
         }
     }
+    class Rectangle : shape
+    {
+        double l;
+        double wd;
+        public double length { get { return l; } set { l = value; } }
+        public double width { get { return wd; } set { wd = value; }}
+
+        public override double Area()
+        {
+            return l * wd;
+        }
+
+        public override double perimetr()
+        {
+            return 2*(l+wd);
+        }
+    }
+        
+        
+    }
     class Program
     {
         static void Main(string[] args)
         {
-            circle c = new circle();
-            c.radius = 5;
-           double g= c.Area();
-            Console.WriteLine(g);
+            
         }
     }
-}
+
